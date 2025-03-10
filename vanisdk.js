@@ -458,11 +458,11 @@ var ZSDKUtil = function (ZSDKUtil) {
    
     function emit(event,data) { 
       console.log(widgetInstance)
-      if(widgetInstance?._isRegistered){
+      // if(widgetInstance?._isRegistered){
         window.currentInstance.sandboxEmit(event,data);
-      }else{
-        throw new Error('UnAuthorized Widget can\'t emit events.'); 
-      }
+      // }else{
+      //   throw new Error('UnAuthorized Widget can\'t emit events.'); 
+      // }
     }
 
     const eventListeners = {};
