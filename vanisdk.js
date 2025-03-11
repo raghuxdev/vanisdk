@@ -453,11 +453,9 @@ var ZSDKUtil = function (ZSDKUtil) {
 
 
   window.VaniSDK=function(window) {
-
-    const widgetInstance = window.ZSDK.Init();
-   
+ 
     function emit(event,data) { 
-      console.log(widgetInstance)
+
       // if(widgetInstance?._isRegistered){
         window.currentInstance.sandboxEmit(event,data);
       // }else{
@@ -481,8 +479,8 @@ var ZSDKUtil = function (ZSDKUtil) {
     }
 
   (function(window){
-    window.currentInstance=this?.ZSDK.Init();
-   
+    window.currentInstance=this.ZSDK?.Init();
+    
   })(window)
   
 
