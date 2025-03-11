@@ -97,6 +97,7 @@ var ZSDKUtil = function (ZSDKUtil) {
               break;
             case '__RUNTIME_SANDBOX_EVENT__':
               HandleSanboxEvent(MessageEvent, data);
+              break;
             default:
               HandleCustomEvent(MessageEvent, data);
               break;
@@ -448,14 +449,19 @@ var ZSDKUtil = function (ZSDKUtil) {
       }
     };
 
-
   }();
 
 
+
+  
   window.VaniSDK=function(window) {
  
     function emit(event,data) { 
+      if(widgetInstance?._isRegistered){
         window.currentInstance.sandboxEmit(event,data);
+      }else{
+        alert("UnAuthorized Extension Error : Please contact the admin for support")
+      }
     }
 
     const eventListeners = {};
@@ -473,11 +479,9 @@ var ZSDKUtil = function (ZSDKUtil) {
         }
     }
 
-  (function(window){
-    window.currentInstance=this.ZSDK?.Init();
-    console.log("initialized currentInstance")
-  })(window)
-  
+    (function(window){
+      window.currentInstance=window.ZSDK.Init();
+    })(window)
 
 const VaniSDK = {
     emit,
