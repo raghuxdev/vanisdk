@@ -457,7 +457,7 @@ var ZSDKUtil = function (ZSDKUtil) {
   window.VaniSDK=function(window) {
  
     function emit(event,data) { 
-      if(widgetInstance?._isRegistered){
+      if(window.currentInstance?._isRegistered){
         window.currentInstance.sandboxEmit(event,data);
       }else{
         alert("UnAuthorized Extension Error : Please contact the admin for support")
