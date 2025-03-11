@@ -455,12 +455,7 @@ var ZSDKUtil = function (ZSDKUtil) {
   window.VaniSDK=function(window) {
  
     function emit(event,data) { 
-
-      // if(widgetInstance?._isRegistered){
         window.currentInstance.sandboxEmit(event,data);
-      // }else{
-      //   throw new Error('UnAuthorized Widget can\'t emit events.'); 
-      // }
     }
 
     const eventListeners = {};
@@ -480,7 +475,7 @@ var ZSDKUtil = function (ZSDKUtil) {
 
   (function(window){
     window.currentInstance=this.ZSDK?.Init();
-    
+    console.log("initialized currentInstance")
   })(window)
   
 
