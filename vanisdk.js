@@ -342,7 +342,7 @@ var ZSDKUtil = function (ZSDKUtil) {
         });
       } else {
         ZSDKMessageManager.SendEvent(eventBindObj, this);
-      }x
+      }
     };
     Widget.prototype._sendEvent = function (eventName, data, isPromise) {
       var messageObj = {
